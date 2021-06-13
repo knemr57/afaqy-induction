@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Address implements Serializable {
 
-    private static final long serialVersionUID = -8678872604671361959L;
+    private static final long serialVersionUID = -2130204348696924214L;
 
     private String street;
     private int code;

@@ -57,10 +57,10 @@ public class XMLSerializationDemo {
 
         // Deserialize From the XML File
         File file = new File(FILE_NAME);
-        List<Person> personsList = xmlMapper.readValue(inputStreamToString(new FileInputStream(file)),
-                new TypeReference<List<Person>>() {
+        String fileContent = inputStreamToString(new FileInputStream(file));
+        List<Person> personsList = xmlMapper.readValue(fileContent, new TypeReference<List<Person>>() {
 
-                });
+        });
         System.out.println(personsList);
     }
 

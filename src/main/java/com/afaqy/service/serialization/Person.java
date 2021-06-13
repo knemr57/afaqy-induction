@@ -1,5 +1,6 @@
 package com.afaqy.service.serialization;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 
@@ -14,6 +15,7 @@ public class Person implements Serializable {
 
     private int age;
     private String name;
+    @JsonIgnore
     private transient int height;
     private Address address; // must be serializable too
     static String country = "EGYPT";

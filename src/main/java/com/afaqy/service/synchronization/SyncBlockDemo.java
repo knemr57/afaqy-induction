@@ -14,19 +14,19 @@ class SyncBlockCounter {
 
     void incSyncBlock() {
         synchronized(this) {
-            count = count + 1;
+            count++;
         }
     }
 
     void incSyncBlockLock() {
         synchronized(lock) {
-            count = count + 1;
+            count++;
         }
     }
 
     static void incSyncStaticBlock() {
         synchronized(SyncBlockCounter.class) {
-            staticCount = staticCount + 1;
+            staticCount++;
         }
     }
 
@@ -47,7 +47,7 @@ public class SyncBlockDemo {
         service.awaitTermination(60, TimeUnit.SECONDS);
 
         System.out.println("Count: " + counter.count);
-        System.out.println("Count: " + SyncBlockCounter.staticCount);
+        System.out.println("Static Count: " + SyncBlockCounter.staticCount);
     }
 
 }

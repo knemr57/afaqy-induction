@@ -11,11 +11,11 @@ class SyncMethodCounter {
     static int staticCount = 0;
 
     synchronized void incSyncMethod() {
-        count = count + 1;
+        count++;
     }
 
     static synchronized void incSyncStaticMethod() {
-        staticCount = staticCount + 1;
+        staticCount++;
     }
 
 }
@@ -33,7 +33,7 @@ public class SyncMethodDemo {
         service.awaitTermination(60, TimeUnit.SECONDS);
 
         System.out.println("Count: " + counter.count);
-        System.out.println("Count: " + SyncMethodCounter.staticCount);
+        System.out.println("Static Count: " + SyncMethodCounter.staticCount);
     }
 
 }
